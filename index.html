@@ -242,17 +242,34 @@
         </a>
       </div>
 
-      <!-- RIGHT — Placeholder image -->
+      <!-- RIGHT — Lifestyle image -->
       <div class="reveal flex justify-center">
-        <div class="relative w-full max-w-sm h-80 bg-emerald-800 rounded-3xl overflow-hidden flex items-center justify-center" style="background: linear-gradient(135deg, #064e35, #10B981);">
-          <div class="text-center">
-            <span class="material-symbols-outlined text-white text-7xl mb-4 block" style="font-size:80px;">celebration</span>
-            <p class="text-white font-700 text-xl">Happy Tenants.</p>
-            <p class="text-emerald-200 text-sm mt-1">Trusted Landlords.</p>
+        <div class="relative w-full max-w-sm">
+          <!-- Real photo — African woman celebrating -->
+          <img
+            src="https://images.pexels.com/photos/30677594/pexels-photo-30677594.jpeg?cs=srgb&dl=pexels-ninthgrid-2149521550-30677594.jpg&fm=jpg"
+            alt="Smiling Nigerian woman holding her phone after securing her apartment"
+            class="w-full h-96 object-cover object-top rounded-3xl shadow-2xl"
+            onerror="this.style.display='none'; var fallback=this.nextElementSibling; if (fallback) { fallback.classList.remove('hidden'); fallback.classList.add('flex'); }"
+          />
+          <!-- Fallback if image fails -->
+          <div class="hidden w-full h-96 rounded-3xl items-center justify-center" style="background: linear-gradient(135deg, #064e35, #10B981);">
+            <div class="text-center">
+              <span class="material-symbols-outlined text-white mb-4 block" style="font-size:80px;">celebration</span>
+              <p class="text-white font-700 text-xl">Happy Tenants.</p>
+              <p class="text-emerald-200 text-sm mt-1">Trusted Landlords.</p>
+            </div>
           </div>
-          <!-- Decorative circles -->
-          <div class="absolute -top-8 -right-8 w-32 h-32 bg-emerald-400/20 rounded-full"></div>
-          <div class="absolute -bottom-8 -left-8 w-24 h-24 bg-emerald-300/20 rounded-full"></div>
+          <!-- Floating badge over image -->
+          <div class="absolute bottom-6 left-6 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3">
+            <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
+              <span class="material-symbols-outlined text-emerald-600 text-lg">verified</span>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">Apartment Secured</p>
+              <p class="text-sm font-700 text-gray-900">Approved in 60s ✓</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -327,31 +344,34 @@
 </section>
 
 
-<!-- ============================================================ TAKE CONTROL ============================================================ -->
-<section class="relative h-96 overflow-hidden">
-  <div class="absolute inset-0 flex items-center justify-center" style="background: linear-gradient(135deg, #064e35 0%, #0d2218 50%, #10B981 100%);">
-    <!-- Decorative elements -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-8 left-8 w-32 h-32 border border-white rounded-full"></div>
-      <div class="absolute top-16 left-16 w-16 h-16 border border-white rounded-full"></div>
-      <div class="absolute bottom-8 right-8 w-40 h-40 border border-white rounded-full"></div>
-      <div class="absolute bottom-16 right-16 w-20 h-20 border border-white rounded-full"></div>
-    </div>
-    <div class="relative text-center px-6 reveal">
-      <p class="text-emerald-300 text-sm font-600 uppercase tracking-widest mb-4">Nigeria's Most Trusted</p>
-      <h2 class="text-4xl lg:text-6xl font-800 text-white leading-tight">Nigeria's Most Trusted<br/>Rental Platform</h2>
-      <div class="flex justify-center gap-12 mt-10">
-        <div class="text-center">
-          <p class="text-3xl font-800 text-white" data-counter data-target="10000">10,000+</p>
-          <p class="text-emerald-300 text-sm mt-1">Waitlist Members</p>
-        </div>
-        <div class="text-center">
-          <p class="text-3xl font-800 text-white" data-counter data-target="2400">₦2.4M+</p>
-          <p class="text-emerald-300 text-sm mt-1">Rent Secured</p>
-        </div>
-        <div class="text-center">
-          <p class="text-3xl font-800 text-white" data-counter data-target="98">98%</p>
-          <p class="text-emerald-300 text-sm mt-1">Satisfaction Rate</p>
+<!-- ============================================================ TAKE CONTROL — FULL WIDTH IMAGE SECTION ============================================================ -->
+<section class="relative overflow-hidden">
+  <!-- Background image with overlay -->
+  <div class="relative h-96">
+    <img
+      src="https://images.pexels.com/photos/34557960/pexels-photo-34557960.jpeg?cs=srgb&dl=pexels-zacky-dare-100710030-34557960.jpg&fm=jpg"
+      alt="Modern residential high-rise building in Lagos, Nigeria"
+      class="w-full h-full object-cover"
+      onerror="this.style.display='none';"
+    />
+    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(6,78,53,0.88) 0%, rgba(13,34,24,0.75) 50%, rgba(16,185,129,0.6) 100%);"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center px-6 reveal">
+        <p class="text-emerald-300 text-sm font-600 uppercase tracking-widest mb-4">Take Control of Your Rental Journey</p>
+        <h2 class="text-4xl lg:text-5xl font-800 text-white leading-tight mb-10">Nigeria's Most Trusted<br/>Rental Platform</h2>
+        <div class="flex flex-wrap justify-center gap-12">
+          <div class="text-center">
+            <p class="text-4xl font-800 text-white" data-counter data-target="10000">0</p>
+            <p class="text-emerald-300 text-sm mt-1">Waitlist Members</p>
+          </div>
+          <div class="text-center">
+            <p class="text-4xl font-800 text-white" data-counter data-target="500">0</p>
+            <p class="text-emerald-300 text-sm mt-1">₦M+ Rent Secured</p>
+          </div>
+          <div class="text-center">
+            <p class="text-4xl font-800 text-white" data-counter data-target="98">0</p>
+            <p class="text-emerald-300 text-sm mt-1">% Satisfaction Rate</p>
+          </div>
         </div>
       </div>
     </div>
@@ -417,10 +437,19 @@
         </div>
       </div>
 
-      <!-- RIGHT — Dashboard mockup -->
+      <!-- RIGHT — Dashboard mockup with lifestyle photo -->
       <div class="reveal flex justify-center">
         <div class="relative">
-          <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 w-80 tilt-card">
+          <!-- Lifestyle photo behind card -->
+          <div class="absolute -right-6 -bottom-6 w-48 h-64 rounded-2xl overflow-hidden shadow-xl opacity-80">
+            <img
+              src="https://images.pexels.com/photos/31826822/pexels-photo-31826822.jpeg?cs=srgb&dl=pexels-darkshadephotos-31826822.jpg&fm=jpg"
+              alt="Nigerian woman using her smartphone indoors"
+              class="w-full h-full object-cover"
+              onerror="this.style.display='none';"
+            />
+          </div>
+          <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 w-80 tilt-card relative z-10">
             <!-- Header -->
             <div class="flex items-center justify-between mb-6">
               <div>
@@ -431,7 +460,6 @@
                 <span class="material-symbols-outlined text-emerald-600 text-lg">person</span>
               </div>
             </div>
-
             <!-- Score -->
             <div class="bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-2xl p-4 mb-4 text-white">
               <p class="text-xs opacity-80 mb-1">Your RentScore™</p>
@@ -441,7 +469,6 @@
                 <span class="text-xs opacity-90">+12 this month</span>
               </div>
             </div>
-
             <!-- Stats row -->
             <div class="grid grid-cols-2 gap-3 mb-4">
               <div class="bg-gray-50 rounded-xl p-3">
@@ -453,7 +480,6 @@
                 <p class="text-sm font-700 text-gray-900">₦45,000</p>
               </div>
             </div>
-
             <!-- Next payment -->
             <div class="border border-gray-100 rounded-xl p-3 flex items-center justify-between">
               <div>
@@ -463,9 +489,8 @@
               <span class="text-xs bg-amber-100 text-amber-600 px-2 py-1 rounded-full font-600">Due in 5 days</span>
             </div>
           </div>
-
           <!-- Floating badge -->
-          <div class="absolute -top-4 -right-4 bg-emerald-500 text-white rounded-2xl px-3 py-2 shadow-lg">
+          <div class="absolute -top-4 -right-4 bg-emerald-500 text-white rounded-2xl px-3 py-2 shadow-lg z-20">
             <p class="text-xs font-500">Identity</p>
             <p class="text-sm font-700">Verified ✓</p>
           </div>
