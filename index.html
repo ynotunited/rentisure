@@ -1,582 +1,651 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>RentiSure | Your Rental Reputation, Verified</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="RentiSure: The trust infrastructure for the Nigerian real estate market. Secure your next apartment with RentiScore™, the NIN-anchored identity & financial trust engine.">
-    <meta name="keywords" content="RentiSure, RentiScore, Rent, Nigeria, Real Estate, Tenant Verification, Landlord Trust, Lagos Rent, RNPL Nigeria">
-    
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#10B981",
-                        "primary-dark": "#059669",
-                        "background-light": "#f6f8f7",
-                        "background-dark": "#10221c",
-                        "inverse-surface": "#2d3133",
-                        "on-tertiary": "#ffffff",
-                        "surface-variant": "#e0e3e5",
-                        "tertiary": "#a43a3a",
-                        "on-primary-fixed-variant": "#005137",
-                        "surface-container-high": "#e6e8ea",
-                        "on-secondary-fixed": "#0d1c2f",
-                        "surface-container-lowest": "#ffffff",
-                        "secondary-container": "#d5e3fd",
-                        "primary-container": "#10B981",
-                        "outline-variant": "#bbcabf",
-                        "on-error": "#ffffff",
-                        "on-surface-variant": "#3c4a42",
-                        "on-error-container": "#93000a",
-                        "on-secondary-fixed-variant": "#3a485c",
-                        "error": "#ba1a1a",
-                        "on-primary": "#ffffff",
-                        "on-tertiary-fixed-variant": "#842225",
-                        "secondary-fixed-dim": "#b9c7e0",
-                        "surface-bright": "#f7f9fb",
-                        "on-tertiary-fixed": "#410005",
-                        "inverse-primary": "#68dba9",
-                        "on-secondary-container": "#57657b",
-                        "on-primary-fixed": "#002114",
-                        "on-secondary": "#ffffff",
-                        "primary-fixed-dim": "#68dba9",
-                        "secondary-fixed": "#d5e3fd",
-                        "tertiary-container": "#fc7c78",
-                        "surface-container-highest": "#e0e3e5",
-                        "error-container": "#ffdad6",
-                        "surface-container-low": "#f2f4f6",
-                        "tertiary-fixed-dim": "#ffb3af",
-                        "surface": "#f7f9fb",
-                        "outline": "#6c7a71",
-                        "inverse-on-surface": "#eff1f3",
-                        "background": "#f7f9fb",
-                        "tertiary-fixed": "#ffdad7",
-                        "on-primary-container": "#00422c",
-                        "surface-dim": "#d8dadc",
-                        "surface-container": "#eceef0",
-                        "on-surface": "#191c1e",
-                        "on-tertiary-container": "#711419",
-                        "surface-tint": "#10B981",
-                        "primary-fixed": "#85f8c4",
-                        "on-background": "#191c1e",
-                        "secondary": "#515f74"
-                    },
-                    fontFamily: {
-                        "display": ["Manrope"],
-                        "headline": ["Manrope", "sans-serif"],
-                        "body": ["Manrope", "sans-serif"],
-                        "label": ["Manrope", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "2xl": "1rem",
-                        "3xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
-    <style>
-        body { font-family: 'Manrope', sans-serif; scroll-behavior: smooth; }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-header {
-            background: rgba(248, 250, 252, 0.8);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-        }
-        .emerald-gradient {
-            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-        }
-        .ghost-border {
-            border: 1px solid rgba(187, 202, 191, 0.15);
-        }
-        
-        /* Premium Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        .float-anim { animation: float 4s ease-in-out infinite; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    </style>
-    <script>
-        window.RENTISURE_APK_URL = "https://expo.dev/artifacts/eas/if45j3ghzYnWhUs2dhNsE.apk";
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RentiSure — Securing Nigeria's Rental Future</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#10B981",
+            "primary-dark": "#059669",
+            "brand-dark": "#0d2218",
+          },
+          fontFamily: {
+            sans: ["Manrope", "sans-serif"],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    * { font-family: "Manrope", sans-serif; }
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .reveal-child { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-child.active { opacity: 1; transform: translateY(0); }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+    .float-anim { animation: float 4s ease-in-out infinite; }
+    @keyframes shimmer { 0%{background-position:0% 50%} 100%{background-position:200% 50%} }
+    .shimmer-text {
+      background: linear-gradient(90deg, #10B981, #34d399, #059669, #10B981);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
+    #typing-word::after { content: "|"; animation: blink 0.8s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .tilt-card { will-change: transform; transition: transform 0.3s ease; }
+    .magnetic-btn { will-change: transform; transition: transform 0.3s ease; }
+    @keyframes scoreGlow { 0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,0.4)} 50%{box-shadow:0 0 0 16px rgba(16,185,129,0)} }
+    .score-glow { animation: scoreGlow 2.5s ease-in-out infinite; }
+    .gradient-border { position: relative; }
+    .gradient-border::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, #10B981, #059669, #34d399);
+      z-index: -1;
+    }
+    @keyframes badgePulse { 0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,0.5)} 70%{box-shadow:0 0 0 10px rgba(16,185,129,0)} }
+    .badge-pulse { animation: badgePulse 2s ease-in-out infinite; }
+    #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg,#10B981,#059669,#34d399); z-index: 9999; transition: width 0.1s linear; box-shadow: 0 0 10px rgba(16,185,129,0.6); }
+    input[type=range]#rent-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 9999px; background: linear-gradient(to right, #10B981 0%, #10B981 50%, #1f4a38 50%, #1f4a38 100%); outline: none; }
+    input[type=range]#rent-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #10B981; cursor: pointer; box-shadow: 0 0 8px rgba(16,185,129,0.6); border: 3px solid #fff; }
+    input[type=range]#rent-slider::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: #10B981; cursor: pointer; border: 3px solid #fff; }
+    .nav-scrolled { background: rgba(255,255,255,0.95) !important; backdrop-filter: blur(12px); box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+  </style>
 </head>
-<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
-    <!-- Top Navigation Shell -->
-    <nav id="main-nav" class="fixed top-0 w-full z-50 glass-header border-b border-slate-100/50">
-        <div id="nav-container" class="max-w-6xl mx-auto px-6 md:px-12 py-2 flex justify-between items-center">
-            <a href="#hero" class="flex items-center">
-                <img id="header-logo" src="assets/logo_black.png" alt="RentiSure Logo" class="h-14 md:h-28 w-auto object-contain">
-            </a>
-            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
-                <a class="text-primary font-semibold" href="#how-it-works">How it Works</a>
-                <a class="hover:text-primary transition-colors" href="#rentscore">RentScore</a>
-                <a class="hover:text-primary transition-colors" href="#landlords">For Landlords</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="#" data-apk-link class="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-bold shadow-sm hover:bg-slate-800 active:scale-95 transition-all inline-block">Get App</a>
-            </div>
+<body class="bg-white text-gray-900 antialiased overflow-x-hidden">
+<div id="scroll-progress"></div>
+
+<!-- ============================================================ NAV ============================================================ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2">
+      <img src="assets/logo_black.png" alt="RentiSure" class="h-8 w-auto" />
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#how-it-works" class="text-sm font-500 text-gray-600 hover:text-primary transition-colors">How it Works</a>
+      <a href="#rentscore" class="text-sm font-500 text-gray-600 hover:text-primary transition-colors">RentScore</a>
+      <a href="#landlords" class="text-sm font-500 text-gray-600 hover:text-primary transition-colors">For Landlords</a>
+      <a href="#pricing" class="text-sm font-500 text-gray-600 hover:text-primary transition-colors">Pricing</a>
+    </div>
+    <a href="#" data-apk-link class="magnetic-btn bg-gray-900 text-white text-sm font-600 px-5 py-2.5 rounded-full hover:bg-gray-700 transition-colors">
+      Get App
+    </a>
+  </div>
+</nav>
+
+
+<!-- ============================================================ HERO ============================================================ -->
+<section id="hero" class="min-h-screen pt-24 pb-16 bg-gradient-to-br from-white via-emerald-50/30 to-white flex items-center">
+  <div class="max-w-7xl mx-auto px-6 w-full">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- LEFT -->
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-600 px-4 py-2 rounded-full mb-8 badge-pulse">
+          <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+          Nigeria's #1 Rental Trust Platform
         </div>
-    </nav>
-
-    <main class="pt-32 md:pt-40 overflow-x-hidden">
-        <!-- Hero Section -->
-        <section id="hero" class="max-w-6xl mx-auto px-6 md:px-12 pt-4 md:pt-12 flex flex-col lg:flex-row items-center gap-16 lg:gap-24 reveal">
-            <div class="flex-1 space-y-8 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-semibold">
-                    <span class="material-symbols-outlined text-base">verified</span>
-                    The New Standard for Renting in Nigeria
-                </div>
-                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight text-on-surface leading-[1.1]">
-                    Get Your Next Apartment Without the <span class="text-primary">Stress.</span>
-                </h1>
-                <p class="text-lg md:text-xl text-on-surface-variant max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                    RentiSure verifies your identity, scores your trust, and helps you get approved instantly. Skip the agent scams and long wait times.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="#" data-apk-link class="bg-slate-900 text-white px-6 py-3.5 rounded-2xl text-base font-bold shadow-lg flex items-center justify-center gap-3 hover:bg-slate-800 active:scale-95 transition-all min-w-[200px]">
-                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M17.06 13.38c.04 2.22 1.94 2.97 1.96 2.98-.02.04-.32 1.08-1.07 2.18-.65.95-1.32 1.89-2.38 1.91-1.04.02-1.38-.61-2.58-.61-1.2 0-1.57.59-2.57.63-1.03.04-1.8-.99-2.45-1.92-1.34-1.93-2.36-5.46-.98-7.85.69-1.18 1.91-1.93 3.23-1.95 1.01-.02 1.95.68 2.57.68.61 0 1.76-.86 2.97-.73.51.02 1.94.2 2.85 1.54-.07.04-1.71.99-1.69 2.94-.02 1.95 1.63 2.96 1.65 2.98.02.04.3 1.06 1.05 2.16zM13.79 5.3c.54-.65.91-1.56.81-2.47-.78.03-1.73.52-2.29 1.17-.5.58-.94 1.5-.82 2.39.87.07 1.76-.44 2.3-.1 0.1 0.1 0 0 0 0z"/>
-                        </svg>
-                        <div class="text-left leading-tight">
-                            <div class="text-[10px] font-medium opacity-80 uppercase tracking-wider">Download on</div>
-                            <div class="text-sm font-extrabold">App Store</div>
-                        </div>
-                    </a>
-                    <a href="#" data-apk-link class="bg-slate-900 text-white px-6 py-3.5 rounded-2xl text-base font-bold shadow-lg flex items-center justify-center gap-3 hover:bg-slate-800 active:scale-95 transition-all min-w-[200px]">
-                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.31-.764V2.578c0-.301.114-.588.309-.764zM14.501 12.7l3.702-3.702 2.222 1.111a1 1 0 010 1.782l-2.222 1.111L14.501 12.7zM4.322 1.111l12.188 10.89-2.001 2.001L4.322 1.111zM4.322 22.889l10.187-10.187 2.001 2.001L4.322 22.889z"/>
-                        </svg>
-                        <div class="text-left leading-tight">
-                            <div class="text-[10px] font-medium opacity-80 uppercase tracking-wider">Get it on</div>
-                            <div class="text-sm font-extrabold">Google Play</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="flex flex-row flex-nowrap justify-center lg:justify-start items-center gap-4 md:gap-8 pt-4 whitespace-nowrap overflow-x-auto no-scrollbar pb-2">
-                    <div class="flex items-center gap-2 text-on-surface-variant text-xs md:text-sm font-bold flex-shrink-0">
-                        <span class="material-symbols-outlined text-primary text-lg md:text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span> No agent scams
-                    </div>
-                    <div class="flex items-center gap-2 text-on-surface-variant text-xs md:text-sm font-bold flex-shrink-0">
-                        <span class="material-symbols-outlined text-primary text-lg md:text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span> Verified tenants only
-                    </div>
-                    <div class="flex items-center gap-2 text-on-surface-variant text-xs md:text-sm font-bold flex-shrink-0">
-                        <span class="material-symbols-outlined text-primary text-lg md:text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span> Instant approval
-                    </div>
-                </div>
-            </div>
-            <div class="flex-1 relative w-full max-w-md lg:max-w-none">
-                <div class="absolute -inset-4 emerald-gradient opacity-10 blur-3xl rounded-full"></div>
-                <div class="relative bg-surface-container-lowest p-4 rounded-[3rem] shadow-2xl ghost-border float-anim">
-                    <img alt="RentiSure Trust Score Dashboard Mockup" class="rounded-[2.5rem] w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlTsZT73_OqwqLvosabScIu1NYCyKuqegYpPiYf_zXRLeKw6Z7ofYoWKqjpT61TWNVDFlJt-BI5znKn60mH4GaOvdA4zbuQVhi4BEdSOYE7wGMETiW-CI_Vjq6hkdfJRpC-aYQyMEdL_EkIVihFnXANm8tI9ECgyYR0yOSzoNZhfQOvaJPTMD2kIs9yEGMRowOpY4HAT1culBB5o9HW0_aYJxcUsPfz59elHqHJqbJU0jvimKCt1GDvFU3rHFWRqCirxwljOPZoc5I"/>
-                </div>
-            </div>
-        </section>
-
-        <!-- Social Proof -->
-        <section class="py-24 mt-12 bg-slate-50 border-y border-slate-100 reveal">
-            <div class="max-w-6xl mx-auto px-6 md:px-12">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                    <div class="space-y-2">
-                        <div class="text-4xl font-extrabold text-on-surface tracking-tighter">10,000+</div>
-                        <p class="text-on-surface-variant font-medium text-sm">Verified tenants found homes</p>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="text-4xl font-extrabold text-on-surface tracking-tighter">₦500M+</div>
-                        <p class="text-on-surface-variant font-medium text-sm">In rent processed securely</p>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="text-4xl font-extrabold text-on-surface tracking-tighter">95%</div>
-                        <p class="text-on-surface-variant font-medium text-sm">Fraud reduction across Lagos</p>
-                    </div>
-                </div>
-                <!-- Removed Partners Section -->
-            </div>
-        </section>
-
-        <!-- How It Works -->
-        <section id="how-it-works" class="py-24 max-w-6xl mx-auto px-6 md:px-12 reveal">
-            <div class="text-center space-y-4 mb-20">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-on-surface tracking-tight">The Easiest Way to Rent</h2>
-                <p class="text-on-surface-variant max-w-2xl mx-auto">Move into your dream home in three simple steps, without the middle-man fatigue.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8 md:gap-12">
-                <!-- Step 1 -->
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 space-y-6 flex flex-col items-center text-center hover:shadow-md transition-all">
-                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">badge</span>
-                    </div>
-                    <h3 class="text-xl font-bold">1. Verify Identity</h3>
-                    <p class="text-on-surface-variant text-sm leading-relaxed">Securely link your NIN or BVN to confirm your identity instantly and build initial trust.</p>
-                </div>
-                <!-- Step 2 -->
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 space-y-6 flex flex-col items-center text-center hover:shadow-md transition-all">
-                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">analytics</span>
-                    </div>
-                    <h3 class="text-xl font-bold">2. Get Your Trust Score</h3>
-                    <p class="text-on-surface-variant text-sm leading-relaxed">Our AI analyzes your financial health and rental history to generate your RentScore.</p>
-                </div>
-                <!-- Step 3 -->
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 space-y-6 flex flex-col items-center text-center hover:shadow-md transition-all">
-                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">key</span>
-                    </div>
-                    <h3 class="text-xl font-bold">3. Get Approved</h3>
-                    <p class="text-on-surface-variant text-sm leading-relaxed">Landlords see your verified profile and approve your application in minutes.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- RentScore Deep Dive -->
-        <section id="rentscore" class="py-24 bg-slate-900 text-white reveal">
-            <div class="max-w-6xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-20 lg:gap-28">
-                <div class="flex-1 space-y-10">
-                    <div class="space-y-4">
-                        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.1]">Your Rental Reputation, All in One Place.</h2>
-                        <p class="text-slate-400 text-lg leading-relaxed">The RentScore (0–1000) is the industry standard for trust. We bridge the gap between financial history and rental reliability.</p>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4 bg-white/5 p-6 rounded-2xl border border-white/10">
-                            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
-                            <div>
-                                <h4 class="font-bold text-lg">Identity Verification</h4>
-                                <p class="text-slate-400 text-sm">Government-level KYC ensuring every tenant is who they say they are.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 bg-white/5 p-6 rounded-2xl border border-white/10">
-                            <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
-                            <div>
-                                <h4 class="font-bold text-lg">Financial Health</h4>
-                                <p class="text-slate-400 text-sm">Aggregated scoring from transaction history and income stability.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex-1 w-full max-w-md lg:max-w-none">
-                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-[2.5rem] border border-white/10 relative shadow-2xl">
-                        <div class="text-center mb-10">
-                            <div class="inline-flex px-4 py-1 bg-primary text-white text-xs font-bold rounded-full mb-4 uppercase tracking-widest">Elite Member</div>
-                            <div class="text-7xl font-extrabold text-white mb-2" id="score-counter">852</div>
-                            <div class="text-primary font-semibold tracking-wide">Excellent RentScore</div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                                <div class="h-full bg-primary w-[85%] rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]"></div>
-                            </div>
-                            <div class="flex justify-between text-[10px] font-bold text-slate-400">
-                                <span>300</span>
-                                <span>POOR</span>
-                                <span>FAIR</span>
-                                <span>GOOD</span>
-                                <span>ELITE</span>
-                                <span>1000</span>
-                            </div>
-                        </div>
-                        <div class="mt-12 flex justify-center">
-                            <img alt="RentiSure Profile QR Code" class="w-32 h-32 p-3 bg-white rounded-2xl shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM9Gt_ND-4TW-QjLBAb4MEuIoMFFzzncUwAkmGEcwk6YSbd0Qua86U8NOxQb0qXi0SOVBI3jbxHKV1eOfYofN9rVe1yOca4DrZIHW64UAMLWVXCDle-DjPiwKP5IIxQ9uJ89V-JZsgNQALwnq9I_hRI6zZEG8FDXUsVdrKJZVA8ezau0E9HFUKkkGyx8pibHI1T7BP7-8qZei6DVSeRQFYOP52EhmimKsLGBUQS_clpIhRG0VR_AEnsJdtoPZvXcREKKnHGl1TGwst"/>
-                        </div>
-                        <p class="text-center text-sm text-slate-400 mt-4 font-medium italic">Your Rent Reputation Passport</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Instant Approval States -->
-        <section class="py-24 max-w-6xl mx-auto px-6 md:px-12 reveal">
-            <div class="grid lg:grid-cols-2 gap-20 lg:gap-28 items-center">
-                <div class="order-2 lg:order-1 grid grid-cols-1 gap-6">
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex items-center justify-between group hover:shadow-md transition-all">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">
-                                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900">Application Approved</h4>
-                                <p class="text-sm text-slate-500">RentScore 800+ Verified</p>
-                            </div>
-                        </div>
-                        <span class="text-emerald-600 font-bold bg-emerald-50 px-3 py-1 rounded-lg text-xs tracking-wide">READY TO SIGN</span>
-                    </div>
-                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex items-center justify-between opacity-80 hover:opacity-100 transition-all">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center">
-                                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-900">Conditional Approval</h4>
-                                <p class="text-sm text-slate-500">Requires Extra Deposit</p>
-                            </div>
-                        </div>
-                        <span class="text-amber-600 font-bold bg-amber-50 px-3 py-1 rounded-lg text-xs tracking-wide">REVIEWING</span>
-                    </div>
-                </div>
-                <div class="order-1 lg:order-2 space-y-8">
-                    <h2 class="text-4xl font-extrabold tracking-tight">Instant Approval System</h2>
-                    <p class="text-on-surface-variant text-lg leading-relaxed">Stop waiting for "the owner" to call you back. Our instant approval system uses real-time verification to let you know where you stand immediately. If you have the score, you have the keys.</p>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3 font-semibold text-on-surface">
-                            <span class="material-symbols-outlined text-primary">speed</span> Decisions in under 60 seconds
-                        </li>
-                        <li class="flex items-center gap-3 font-semibold text-on-surface">
-                            <span class="material-symbols-outlined text-primary">verified_user</span> 100% scam-free environments
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Rent Now Pay Later (RNPL) + Simulator -->
-        <section id="simulator" class="py-24 bg-slate-50 overflow-hidden relative reveal">
-            <div class="max-w-6xl mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                <div class="space-y-8">
-                    <div class="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-widest">RNPL Simulator</div>
-                    <h2 class="text-4xl font-extrabold tracking-tight">Flexible Rent Payments for Trusted Tenants</h2>
-                    <p class="text-on-surface-variant text-lg">High RentScore members get access to **Rent Now, Pay Later**. We pay your full year upfront, you pay us monthly.</p>
-                    
-                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-8">
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center">
-                                <label class="text-slate-500 font-medium">Desired Annual Rent</label>
-                                <span class="font-bold text-slate-900 text-xl" id="rent-value-display">₦2,400,000</span>
-                            </div>
-                            <input type="range" min="1000000" max="15000000" step="100000" value="2400000" 
-                                   class="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-primary" id="rent-slider">
-                        </div>
-                        
-                        <div class="grid grid-cols-2 gap-6 pt-4 border-t border-slate-100">
-                            <div class="space-y-1">
-                                <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Monthly Fluid</span>
-                                <div class="font-extrabold text-primary text-2xl" id="monthly-display">₦215,000</div>
-                            </div>
-                            <div class="space-y-1">
-                                <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Trust Factor</span>
-                                <div class="font-extrabold text-slate-900 text-2xl">0.92x</div>
-                            </div>
-                        </div>
-                        
-                        <button class="w-full py-4 bg-slate-900 text-white font-bold hover:bg-slate-800 transition-all rounded-xl shadow-lg flex items-center justify-center gap-2">
-                            Apply for RNPL <span class="material-symbols-outlined text-sm">rocket_launch</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="absolute -inset-10 bg-primary/10 blur-[100px] rounded-full"></div>
-                    <img alt="Person happy moving into home" class="rounded-[2.5rem] shadow-2xl relative z-10 hover:scale-[1.02] transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApjRC-wcsV1NKsfe6-LhAzelB_ZzvCU8eag6qkWEu3XQlLX-JMzHPj6HPMlFs7klE7DdbfIOZlivES7GqI48ejKjRPxfc9GPwtgtvT6wMLNWZMHg7_rdtAJlqZbtGkJ7d_A9MmuIbJ-L1_SgnBUGWB7Yot0JiGEnX5KUw8bf8u0TD3lZxiXvAoNHof9oLMaDfp2RicTYGk07vc71_Npp9cdxYKdA3_A7XH-xx36QzeekkFvPe_lPqKIZZuk7Ov3s5U023Hw69IWE3P"/>
-                </div>
-            </div>
-        </section>
-
-        <!-- Landlord Section -->
-        <section id="landlords" class="py-24 max-w-6xl mx-auto px-6 md:px-12 text-center reveal">
-            <div class="emerald-gradient rounded-[3rem] p-12 md:p-24 space-y-8 relative overflow-hidden shadow-2xl">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-[100px] -mr-32 -mt-32"></div>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight relative z-10 leading-tight">Landlords: Find Tenants You Can Trust.</h2>
-                <p class="text-white/80 text-lg max-w-2xl mx-auto relative z-10">Eliminate the risk of defaults and difficult tenants. Our platform filters for high-quality, verified individuals with proven financial health.</p>
-                <div class="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
-                    <button class="bg-white text-emerald-700 px-10 py-4 rounded-2xl font-extrabold text-lg shadow-xl hover:bg-slate-50 transition-all active:scale-95">List Your Property</button>
-                    <button class="bg-white/10 text-white border border-white/20 backdrop-blur-md px-10 py-4 rounded-2xl font-extrabold text-lg hover:bg-white/20 transition-all active:scale-95">Book a Demo</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA / Waitlist -->
-        <section id="waitlist" class="py-24 max-w-4xl mx-auto px-6 text-center reveal">
-            <div class="bg-white p-12 md:p-20 rounded-[3rem] shadow-2xl border border-slate-100 space-y-10 relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -ml-16 -mt-16"></div>
-                
-                <div class="space-y-4 relative z-10">
-                    <h2 class="text-4xl font-extrabold tracking-tight">Join the RentiSure Revolution</h2>
-                    <p class="text-on-surface-variant text-lg">Be the first to know when we launch in your neighborhood. Get priority access to RentiScore™.</p>
-                </div>
-                
-                <form id="waitlist-form" class="max-w-md mx-auto relative z-10 space-y-4">
-                    <div class="relative">
-                        <input type="email" required placeholder="Enter your email address" 
-                               class="w-full px-6 py-5 bg-slate-50 border border-slate-200 rounded-2xl text-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all">
-                    </div>
-                    <button type="submit" class="w-full emerald-gradient text-white py-5 rounded-2xl text-lg font-bold shadow-lg hover:opacity-95 active:scale-95 transition-all">
-                        Join Waitlist
-                    </button>
-                    <p class="text-[10px] text-slate-400 font-medium">By joining, you agree to our Privacy Policy and Terms of Service.</p>
-                </form>
-                
-                <div id="success-message" class="hidden space-y-4 animate-bounce">
-                    <div class="w-16 h-16 bg-primary/10 text-primary rounded-full mx-auto flex items-center justify-center">
-                        <span class="material-symbols-outlined text-4xl">check_circle</span>
-                    </div>
-                    <h3 class="text-2xl font-bold">You're on the list!</h3>
-                    <p class="text-on-surface-variant">We'll reach out as soon as RentiSure is ready for you.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-100">
-        <div class="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-20">
-            <div class="flex flex-col md:flex-row justify-between items-start gap-12">
-                <div class="space-y-6 max-w-xs">
-                    <div class="flex items-center">
-                        <img src="assets/logo_black.png" alt="RentiSure Logo" class="h-20 w-auto">
-                    </div>
-                    <p class="text-sm text-slate-500 leading-relaxed">The trust infrastructure for the Nigerian real estate market. Securing homes, one score at a time.</p>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
-                    <div class="space-y-4">
-                        <h4 class="font-bold text-slate-900 text-sm">Product</h4>
-                        <ul class="space-y-2 text-sm text-slate-500">
-                            <li><a class="hover:text-primary transition-colors" href="#">RentScore</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Verify Me</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">RNPL Financing</a></li>
-                        </ul>
-                    </div>
-                    <div class="space-y-4">
-                        <h4 class="font-bold text-slate-900 text-sm">Resources</h4>
-                        <ul class="space-y-2 text-sm text-slate-500">
-                            <li><a class="hover:text-primary transition-colors" href="#">Support</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="space-y-4">
-                        <h4 class="font-bold text-slate-900 text-sm">Legal</h4>
-                        <ul class="space-y-2 text-sm text-slate-500">
-                            <li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Terms</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-20 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-                <p class="text-sm text-slate-500 font-medium">© 2026 RentiSure. All rights reserved | <a href="https://webxpresstech.com.ng" target="_blank" class="text-slate-900 hover:text-primary transition-colors font-bold border-b border-transparent hover:border-primary">Webxpress Technologies MadeIT</a></p>
-                <div class="flex gap-6">
-                    <button id="share-btn" class="text-slate-400 hover:text-primary transition-colors flex items-center justify-center focus:outline-none" title="Share RentiSure">
-                        <span class="material-symbols-outlined">share</span>
-                    </button>
-                </div>
-            </div>
+        <h1 class="text-5xl lg:text-6xl font-800 leading-tight text-gray-900 mb-6">
+          Rent Smarter.<br/>
+          <span class="shimmer-text">Live Better.</span><br/>
+          Trust Verified.
+        </h1>
+        <p class="text-lg text-gray-500 leading-relaxed mb-10 max-w-lg">
+          RentiSure is Nigeria's trust infrastructure for renting — verify your identity, build your RentScore™, and get approved without the <span id="typing-word" class="text-primary font-700"></span>
+        </p>
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="#" data-apk-link class="magnetic-btn flex items-center gap-3 bg-gray-900 text-white px-6 py-3.5 rounded-xl font-600 hover:bg-gray-700 transition-all shadow-lg">
+            <span class="material-symbols-outlined text-xl">phone_iphone</span>
+            App Store
+          </a>
+          <a href="#" data-apk-link class="magnetic-btn flex items-center gap-3 bg-gray-900 text-white px-6 py-3.5 rounded-xl font-600 hover:bg-gray-700 transition-all shadow-lg">
+            <span class="material-symbols-outlined text-xl">android</span>
+            Google Play
+          </a>
         </div>
-    </footer>
+        <div class="flex flex-wrap gap-6">
+          <div class="flex items-center gap-2 text-sm text-gray-500">
+            <span class="material-symbols-outlined text-primary text-base">verified_user</span>
+            NIN Verified
+          </div>
+          <div class="flex items-center gap-2 text-sm text-gray-500">
+            <span class="material-symbols-outlined text-primary text-base">lock</span>
+            Escrow Protected
+          </div>
+          <div class="flex items-center gap-2 text-sm text-gray-500">
+            <span class="material-symbols-outlined text-primary text-base">star</span>
+            10,000+ Waitlist
+          </div>
+        </div>
+      </div>
 
-    <script>
-        // Reveal on scroll
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
+      <!-- RIGHT — UI Card Mockup -->
+      <div class="relative flex justify-center items-center reveal">
+        <!-- Main card -->
+        <div class="float-anim relative bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 w-80 z-10 tilt-card">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <p class="text-xs text-gray-400 font-500">RentScore™</p>
+              <p class="text-4xl font-800 text-gray-900" id="score-counter">852</p>
+            </div>
+            <div class="w-16 h-16 score-glow rounded-full bg-emerald-50 border-4 border-emerald-400 flex items-center justify-center">
+              <span class="material-symbols-outlined text-emerald-500 text-2xl">trending_up</span>
+            </div>
+          </div>
+          <div class="space-y-2 mb-4">
+            <div class="flex justify-between text-xs text-gray-500">
+              <span>Identity</span><span class="text-emerald-500 font-600">Verified ✓</span>
+            </div>
+            <div class="w-full bg-gray-100 rounded-full h-1.5">
+              <div class="bg-emerald-500 h-1.5 rounded-full" style="width:92%"></div>
+            </div>
+            <div class="flex justify-between text-xs text-gray-500">
+              <span>Rental History</span><span class="text-emerald-500 font-600">Excellent</span>
+            </div>
+            <div class="w-full bg-gray-100 rounded-full h-1.5">
+              <div class="bg-emerald-400 h-1.5 rounded-full" style="width:85%"></div>
+            </div>
+            <div class="flex justify-between text-xs text-gray-500">
+              <span>Bank Data</span><span class="text-emerald-500 font-600">Linked</span>
+            </div>
+            <div class="w-full bg-gray-100 rounded-full h-1.5">
+              <div class="bg-emerald-300 h-1.5 rounded-full" style="width:78%"></div>
+            </div>
+          </div>
+          <div class="bg-emerald-50 rounded-xl p-3 flex items-center justify-between">
+            <span class="text-xs text-gray-600 font-500">Lease Status</span>
+            <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded-full font-600">Active</span>
+          </div>
+        </div>
 
-        window.addEventListener("scroll", reveal);
-        window.addEventListener("load", reveal);
+        <!-- Floating stat cards -->
+        <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl border border-gray-100 px-4 py-3 flex items-center gap-2 z-20">
+          <div class="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
+            <span class="material-symbols-outlined text-emerald-600 text-sm">shield</span>
+          </div>
+          <div>
+            <p class="text-xs text-gray-400">Escrow</p>
+            <p class="text-sm font-700 text-gray-900">₦2.4M Secured</p>
+          </div>
+        </div>
 
-        // Score animation
-        function animateScore() {
-            const scoreElement = document.getElementById('score-counter');
-            if (!scoreElement) return;
-            
-            let count = 0;
-            const target = 852;
-            const speed = 2000 / target;
-            
-            const timer = setInterval(() => {
-                count++;
-                scoreElement.innerText = count;
-                if (count === target) clearInterval(timer);
-            }, speed);
-        }
+        <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl border border-gray-100 px-4 py-3 flex items-center gap-2 z-20">
+          <div class="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
+            <span class="material-symbols-outlined text-emerald-600 text-sm">verified</span>
+          </div>
+          <div>
+            <p class="text-xs text-gray-400">Identity</p>
+            <p class="text-sm font-700 text-gray-900">Verified ✓</p>
+          </div>
+        </div>
 
-        // Initialize animations on load
-        document.addEventListener('DOMContentLoaded', () => {
-             // Centralize APK download targets so Pages + Release asset uses one URL.
-             document.querySelectorAll('[data-apk-link]').forEach((link) => {
-                 link.setAttribute('href', window.RENTISURE_APK_URL);
-             });
+        <div class="absolute top-1/2 -right-8 bg-emerald-500 text-white rounded-2xl shadow-xl px-4 py-3 z-20">
+          <p class="text-xs font-500 opacity-80">RentScore™</p>
+          <p class="text-lg font-800">852</p>
+        </div>
+      </div>
 
-             // Delay score animation slightly
-             setTimeout(animateScore, 800);
-             
-             // Simulator logic
-             const slider = document.getElementById('rent-slider');
-             const rentDisplay = document.getElementById('rent-value-display');
-             const monthlyDisplay = document.getElementById('monthly-display');
-             
-             if(slider) {
-                 slider.addEventListener('input', (e) => {
-                     const val = parseInt(e.target.value);
-                     rentDisplay.innerText = '₦' + val.toLocaleString();
-                     
-                     // Roughly 1/12th plus a small fee/interest buffer for RNPL
-                     const monthly = Math.round((val / 12) + (val * 0.0075));
-                     monthlyDisplay.innerText = '₦' + monthly.toLocaleString();
-                 });
-             }
-             
-             // Waitlist logic
-             const waitlistForm = document.getElementById('waitlist-form');
-             const successMsg = document.getElementById('success-message');
-             
-             if(waitlistForm) {
-                 waitlistForm.addEventListener('submit', (e) => {
-                     e.preventDefault();
-                     waitlistForm.classList.add('hidden');
-                     successMsg.classList.remove('hidden');
-                 });
-             }
+    </div>
+  </div>
+</section>
 
-             // Share functionality
-             const shareBtn = document.getElementById('share-btn');
-             if (shareBtn) {
-                 shareBtn.addEventListener('click', () => {
-                     if (navigator.share) {
-                         navigator.share({
-                             title: 'RentiSure',
-                             text: 'Secure your next apartment with RentiScore™',
-                             url: window.location.href
-                         }).catch(() => {});
-                     } else {
-                         navigator.clipboard.writeText(window.location.href).then(() => {
-                             alert('Link copied to clipboard!');
-                         });
-                     }
-                 });
-             }
-        });
-    </script>
+
+<!-- ============================================================ PARTNER STRIP ============================================================ -->
+<section class="py-12 bg-gray-50 border-y border-gray-100">
+  <div class="max-w-7xl mx-auto px-6">
+    <p class="text-center text-sm font-600 text-gray-400 uppercase tracking-widest mb-8">Trusted by Nigeria's leading platforms</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <span class="bg-white border border-gray-200 text-gray-600 text-sm font-600 px-5 py-2.5 rounded-full shadow-sm hover:border-emerald-300 hover:text-emerald-600 transition-colors">Paystack</span>
+      <span class="bg-white border border-gray-200 text-gray-600 text-sm font-600 px-5 py-2.5 rounded-full shadow-sm hover:border-emerald-300 hover:text-emerald-600 transition-colors">Mono</span>
+      <span class="bg-white border border-gray-200 text-gray-600 text-sm font-600 px-5 py-2.5 rounded-full shadow-sm hover:border-emerald-300 hover:text-emerald-600 transition-colors">NIMC</span>
+      <span class="bg-white border border-gray-200 text-gray-600 text-sm font-600 px-5 py-2.5 rounded-full shadow-sm hover:border-emerald-300 hover:text-emerald-600 transition-colors">Smile ID</span>
+      <span class="bg-white border border-gray-200 text-gray-600 text-sm font-600 px-5 py-2.5 rounded-full shadow-sm hover:border-emerald-300 hover:text-emerald-600 transition-colors">OneSignal</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ GREEN FEATURE BANNER ============================================================ -->
+<section id="landlords" class="py-20 bg-brand-dark" style="background-color:#0d2218;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- LEFT -->
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 bg-emerald-900/50 border border-emerald-700 text-emerald-400 text-xs font-600 px-4 py-2 rounded-full mb-6">
+          <span class="w-2 h-2 bg-emerald-400 rounded-full"></span>
+          For Landlords & Tenants
+        </div>
+        <h2 class="text-4xl lg:text-5xl font-800 text-white leading-tight mb-6">
+          Designed for Tenants.<br/>
+          <span class="shimmer-text">Built for Landlords.</span>
+        </h2>
+        <p class="text-lg text-gray-400 leading-relaxed mb-8 max-w-lg">
+          RentiSure protects both sides of every rental transaction with verified identity, smart escrow, and data-driven trust scoring.
+        </p>
+        <a href="#" data-apk-link class="magnetic-btn inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white font-700 px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-emerald-900/40">
+          <span class="material-symbols-outlined text-lg">download</span>
+          Download App
+        </a>
+      </div>
+
+      <!-- RIGHT — Placeholder image -->
+      <div class="reveal flex justify-center">
+        <div class="relative w-full max-w-sm h-80 bg-emerald-800 rounded-3xl overflow-hidden flex items-center justify-center" style="background: linear-gradient(135deg, #064e35, #10B981);">
+          <div class="text-center">
+            <span class="material-symbols-outlined text-white text-7xl mb-4 block" style="font-size:80px;">celebration</span>
+            <p class="text-white font-700 text-xl">Happy Tenants.</p>
+            <p class="text-emerald-200 text-sm mt-1">Trusted Landlords.</p>
+          </div>
+          <!-- Decorative circles -->
+          <div class="absolute -top-8 -right-8 w-32 h-32 bg-emerald-400/20 rounded-full"></div>
+          <div class="absolute -bottom-8 -left-8 w-24 h-24 bg-emerald-300/20 rounded-full"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ WHY CHOOSE US ============================================================ -->
+<section id="how-it-works" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <p class="text-sm font-600 text-emerald-500 uppercase tracking-widest mb-3">Why Choose RentiSure</p>
+      <h2 class="text-4xl lg:text-5xl font-800 text-gray-900 mb-4">Built on Trust. Powered by Data.</h2>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto">Every feature is designed to eliminate the friction, fraud, and fear from Nigeria's rental market.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 reveal">
+
+      <!-- Card 1: Tenant Protection -->
+      <div class="reveal-child tilt-card bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all">
+        <!-- Score ring visual -->
+        <div class="relative w-24 h-24 mx-auto mb-6">
+          <svg viewBox="0 0 100 100" class="w-full h-full -rotate-90">
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#f0fdf4" stroke-width="10"/>
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#10B981" stroke-width="10"
+              stroke-dasharray="251" stroke-dashoffset="50" stroke-linecap="round"/>
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="material-symbols-outlined text-emerald-500 text-3xl">shield</span>
+          </div>
+        </div>
+        <h3 class="text-xl font-700 text-gray-900 mb-3 text-center">Tenant Protection</h3>
+        <p class="text-gray-500 text-sm leading-relaxed text-center">Escrow Shield holds rent securely, releasing monthly tranches only after check-in confirmation.</p>
+        <div class="mt-6 flex justify-center">
+          <span class="bg-emerald-50 text-emerald-600 text-xs font-600 px-3 py-1.5 rounded-full">Escrow Shield™</span>
+        </div>
+      </div>
+
+      <!-- Card 2: RentScore Engine -->
+      <div class="reveal-child tilt-card bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all" id="rentscore">
+        <!-- Bar chart visual -->
+        <div class="flex items-end justify-center gap-2 h-20 mb-6">
+          <div class="w-6 bg-emerald-200 rounded-t-md" style="height:40%"></div>
+          <div class="w-6 bg-emerald-300 rounded-t-md" style="height:60%"></div>
+          <div class="w-6 bg-emerald-400 rounded-t-md" style="height:75%"></div>
+          <div class="w-6 bg-emerald-500 rounded-t-md" style="height:90%"></div>
+          <div class="w-6 bg-emerald-600 rounded-t-md" style="height:100%"></div>
+        </div>
+        <h3 class="text-xl font-700 text-gray-900 mb-3 text-center">RentScore™ Engine</h3>
+        <p class="text-gray-500 text-sm leading-relaxed text-center">A dynamic 0–1000 trust score built from NIN identity, bank data, and rental history.</p>
+        <div class="mt-6 flex justify-center">
+          <span class="bg-emerald-50 text-emerald-600 text-xs font-600 px-3 py-1.5 rounded-full">Score: 852 / 1000</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Integrity First -->
+      <div class="reveal-child tilt-card bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all">
+        <!-- Shield icon visual -->
+        <div class="w-24 h-24 mx-auto mb-6 bg-emerald-50 rounded-full flex items-center justify-center score-glow">
+          <span class="material-symbols-outlined text-emerald-500" style="font-size:48px;">verified_user</span>
+        </div>
+        <h3 class="text-xl font-700 text-gray-900 mb-3 text-center">Integrity First</h3>
+        <p class="text-gray-500 text-sm leading-relaxed text-center">TrustLink vouching network ensures every landlord and tenant is accountable.</p>
+        <div class="mt-6 flex justify-center">
+          <span class="bg-emerald-50 text-emerald-600 text-xs font-600 px-3 py-1.5 rounded-full">TrustLink™</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ TAKE CONTROL ============================================================ -->
+<section class="relative h-96 overflow-hidden">
+  <div class="absolute inset-0 flex items-center justify-center" style="background: linear-gradient(135deg, #064e35 0%, #0d2218 50%, #10B981 100%);">
+    <!-- Decorative elements -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-8 left-8 w-32 h-32 border border-white rounded-full"></div>
+      <div class="absolute top-16 left-16 w-16 h-16 border border-white rounded-full"></div>
+      <div class="absolute bottom-8 right-8 w-40 h-40 border border-white rounded-full"></div>
+      <div class="absolute bottom-16 right-16 w-20 h-20 border border-white rounded-full"></div>
+    </div>
+    <div class="relative text-center px-6 reveal">
+      <p class="text-emerald-300 text-sm font-600 uppercase tracking-widest mb-4">Nigeria's Most Trusted</p>
+      <h2 class="text-4xl lg:text-6xl font-800 text-white leading-tight">Nigeria's Most Trusted<br/>Rental Platform</h2>
+      <div class="flex justify-center gap-12 mt-10">
+        <div class="text-center">
+          <p class="text-3xl font-800 text-white" data-counter data-target="10000">10,000+</p>
+          <p class="text-emerald-300 text-sm mt-1">Waitlist Members</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-800 text-white" data-counter data-target="2400">₦2.4M+</p>
+          <p class="text-emerald-300 text-sm mt-1">Rent Secured</p>
+        </div>
+        <div class="text-center">
+          <p class="text-3xl font-800 text-white" data-counter data-target="98">98%</p>
+          <p class="text-emerald-300 text-sm mt-1">Satisfaction Rate</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ CHANGE THE WAY YOU RENT ============================================================ -->
+<section class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- LEFT -->
+      <div class="reveal">
+        <p class="text-sm font-600 text-emerald-500 uppercase tracking-widest mb-3">The RentiSure Way</p>
+        <h2 class="text-4xl lg:text-5xl font-800 text-gray-900 leading-tight mb-6">
+          Change The Way<br/>You Rent in Nigeria
+        </h2>
+        <p class="text-lg text-gray-500 mb-10">
+          From identity verification to monthly rent payments — we've rebuilt the entire rental experience from the ground up.
+        </p>
+
+        <div class="space-y-6">
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-emerald-600">fingerprint</span>
+            </div>
+            <div>
+              <h4 class="font-700 text-gray-900 mb-1">NIN-Verified Identity</h4>
+              <p class="text-sm text-gray-500">Government-level KYC in seconds. No paperwork, no delays.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-emerald-600">account_balance_wallet</span>
+            </div>
+            <div>
+              <h4 class="font-700 text-gray-900 mb-1">Escrow Shield</h4>
+              <p class="text-sm text-gray-500">Your rent is protected, always. Funds released only on confirmation.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-emerald-600">payments</span>
+            </div>
+            <div>
+              <h4 class="font-700 text-gray-900 mb-1">Rent Credit</h4>
+              <p class="text-sm text-gray-500">Pay monthly, not 2 years upfront. Flexible plans that work for you.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-emerald-600">hub</span>
+            </div>
+            <div>
+              <h4 class="font-700 text-gray-900 mb-1">Smart Matching</h4>
+              <p class="text-sm text-gray-500">Find verified landlords and tenants instantly with AI-powered matching.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — Dashboard mockup -->
+      <div class="reveal flex justify-center">
+        <div class="relative">
+          <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 w-80 tilt-card">
+            <!-- Header -->
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <p class="text-xs text-gray-400">Good morning,</p>
+                <p class="text-base font-700 text-gray-900">Chidi Okafor</p>
+              </div>
+              <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-emerald-600 text-lg">person</span>
+              </div>
+            </div>
+
+            <!-- Score -->
+            <div class="bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-2xl p-4 mb-4 text-white">
+              <p class="text-xs opacity-80 mb-1">Your RentScore™</p>
+              <p class="text-3xl font-800">852</p>
+              <div class="flex items-center gap-1 mt-1">
+                <span class="material-symbols-outlined text-sm">trending_up</span>
+                <span class="text-xs opacity-90">+12 this month</span>
+              </div>
+            </div>
+
+            <!-- Stats row -->
+            <div class="grid grid-cols-2 gap-3 mb-4">
+              <div class="bg-gray-50 rounded-xl p-3">
+                <p class="text-xs text-gray-400 mb-1">Lease Status</p>
+                <p class="text-sm font-700 text-emerald-600">Active ✓</p>
+              </div>
+              <div class="bg-gray-50 rounded-xl p-3">
+                <p class="text-xs text-gray-400 mb-1">Wallet</p>
+                <p class="text-sm font-700 text-gray-900">₦45,000</p>
+              </div>
+            </div>
+
+            <!-- Next payment -->
+            <div class="border border-gray-100 rounded-xl p-3 flex items-center justify-between">
+              <div>
+                <p class="text-xs text-gray-400">Next Payment</p>
+                <p class="text-sm font-700 text-gray-900">₦85,000</p>
+              </div>
+              <span class="text-xs bg-amber-100 text-amber-600 px-2 py-1 rounded-full font-600">Due in 5 days</span>
+            </div>
+          </div>
+
+          <!-- Floating badge -->
+          <div class="absolute -top-4 -right-4 bg-emerald-500 text-white rounded-2xl px-3 py-2 shadow-lg">
+            <p class="text-xs font-500">Identity</p>
+            <p class="text-sm font-700">Verified ✓</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ PRICING / RNPL SIMULATOR ============================================================ -->
+<section id="pricing" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- LEFT -->
+      <div class="reveal">
+        <p class="text-sm font-600 text-emerald-500 uppercase tracking-widest mb-3">Rent Now, Pay Later</p>
+        <h2 class="text-4xl lg:text-5xl font-800 text-gray-900 leading-tight mb-6">
+          Flexible Rent.<br/>Your Terms.
+        </h2>
+        <p class="text-lg text-gray-500 leading-relaxed mb-8">
+          Stop paying 1–2 years upfront. With RentiSure's RNPL (Rent Now, Pay Later), you pay monthly while your landlord gets paid in full. Everyone wins.
+        </p>
+        <form id="waitlist-form-pricing" class="flex gap-3 max-w-md">
+          <input type="email" placeholder="Enter your email" required
+            class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100" />
+          <button type="submit" class="magnetic-btn bg-emerald-500 hover:bg-emerald-600 text-white font-600 px-6 py-3 rounded-xl transition-colors whitespace-nowrap">
+            Get Early Access
+          </button>
+        </form>
+        <p class="text-xs text-gray-400 mt-3">No credit card required. Join 10,000+ on the waitlist.</p>
+      </div>
+
+      <!-- RIGHT — Simulator card -->
+      <div class="reveal">
+        <div class="bg-gray-900 rounded-3xl p-8 text-white tilt-card" style="background-color:#0d2218;">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-lg font-700">RNPL Simulator</h3>
+            <span class="bg-emerald-500 text-white text-xs font-600 px-3 py-1 rounded-full">Beta</span>
+          </div>
+
+          <div class="mb-6">
+            <div class="flex justify-between items-center mb-3">
+              <label class="text-sm text-gray-400">Annual Rent Amount</label>
+              <span id="rent-value-display" class="text-emerald-400 font-700 text-lg">₦600,000</span>
+            </div>
+            <input type="range" id="rent-slider" min="200000" max="5000000" step="50000" value="600000" class="w-full" />
+            <div class="flex justify-between text-xs text-gray-500 mt-2">
+              <span>₦200K</span>
+              <span>₦5M</span>
+            </div>
+          </div>
+
+          <div class="bg-white/5 rounded-2xl p-5 border border-white/10">
+            <p class="text-sm text-gray-400 mb-2">Your monthly payment</p>
+            <p id="monthly-display" class="text-4xl font-800 text-emerald-400">₦53,750</p>
+            <p class="text-xs text-gray-500 mt-2">Includes 7.5% service fee. No hidden charges.</p>
+          </div>
+
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center gap-3 text-sm text-gray-400">
+              <span class="material-symbols-outlined text-emerald-500 text-base">check_circle</span>
+              Landlord gets full payment upfront
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-400">
+              <span class="material-symbols-outlined text-emerald-500 text-base">check_circle</span>
+              You pay monthly — stress-free
+            </div>
+            <div class="flex items-center gap-3 text-sm text-gray-400">
+              <span class="material-symbols-outlined text-emerald-500 text-base">check_circle</span>
+              Builds your RentScore™ automatically
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================ WAITLIST CTA ============================================================ -->
+<section class="py-24" style="background-color:#064e35;">
+  <div class="max-w-3xl mx-auto px-6 text-center reveal">
+    <div class="inline-flex items-center gap-2 bg-emerald-900/50 border border-emerald-600 text-emerald-300 text-xs font-600 px-4 py-2 rounded-full mb-8">
+      <span class="w-2 h-2 bg-emerald-400 rounded-full badge-pulse"></span>
+      Limited Early Access
+    </div>
+    <h2 class="text-4xl lg:text-5xl font-800 text-white leading-tight mb-6">
+      Join 10,000+ Nigerians<br/>Already on the Waitlist
+    </h2>
+    <p class="text-lg text-emerald-200 mb-10">
+      Be first to access RentiSure when we launch. Early members get priority onboarding, free RentScore™ reports, and exclusive RNPL rates.
+    </p>
+    <form id="waitlist-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <input type="email" placeholder="your@email.com" required
+        class="flex-1 bg-white/10 border border-white/20 text-white placeholder-emerald-300 rounded-xl px-5 py-3.5 text-sm focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30" />
+      <button type="submit" class="magnetic-btn bg-white text-emerald-700 font-700 px-7 py-3.5 rounded-xl hover:bg-emerald-50 transition-colors whitespace-nowrap">
+        Join Waitlist
+      </button>
+    </form>
+    <div id="form-feedback" class="hidden mt-4"></div>
+    <p class="text-xs text-emerald-400 mt-4">No spam. Unsubscribe anytime. 🔒 Your data is safe with us.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================ FOOTER ============================================================ -->
+<footer class="bg-gray-900 text-gray-400 pt-16 pb-8" style="background-color:#0d2218;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-12 mb-12">
+
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <img src="assets/logo_white.png" alt="RentiSure" class="h-8 w-auto mb-4" />
+        <p class="text-sm text-gray-500 leading-relaxed mb-6">Securing Nigeria's Rental Future. Verified identity, smart escrow, and data-driven trust for every rental.</p>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 bg-white/10 hover:bg-emerald-500 rounded-full flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-sm">language</span>
+          </a>
+          <a href="#" class="w-9 h-9 bg-white/10 hover:bg-emerald-500 rounded-full flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-sm">chat</span>
+          </a>
+          <a href="#" class="w-9 h-9 bg-white/10 hover:bg-emerald-500 rounded-full flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-sm">mail</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Product -->
+      <div>
+        <h4 class="text-white font-700 text-sm mb-5">Product</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#rentscore" class="hover:text-emerald-400 transition-colors">RentScore</a></li>
+          <li><a href="#" class="hover:text-emerald-400 transition-colors">Escrow Shield</a></li>
+          <li><a href="#pricing" class="hover:text-emerald-400 transition-colors">Rent Credit</a></li>
+          <li><a href="#" class="hover:text-emerald-400 transition-colors">TrustLink</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="text-white font-700 text-sm mb-5">Company</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="hover:text-emerald-400 transition-colors">About</a></li>
+          <li><a href="#" class="hover:text-emerald-400 transition-colors">Blog</a></li>
+          <li><a href="#" class="hover:text-emerald-400 transition-colors">Careers</a></li>
+          <li><a href="#" class="hover:text-emerald-400 transition-colors">Press</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h4 class="text-white font-700 text-sm mb-5">Legal</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="#" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-emerald-400 transition-colors">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-emerald-400 transition-colors">Security</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="flex gap-3">
+          <a href="#" class="w-8 h-8 bg-white/10 hover:bg-emerald-500 rounded-full flex items-center justify-center transition-colors text-xs font-700">X</a>
+          <a href="#" class="w-8 h-8 bg-white/10 hover:bg-emerald-500 rounded-full flex items-center justify-center transition-colors text-xs font-700">in</a>
+          <a href="#" class="w-8 h-8 bg-white/10 hover:bg-emerald-500 rounded-full flex items-center justify-center transition-colors text-xs font-700">ig</a>
+        </div>
+      </div>
+      <p class="text-xs text-gray-600">© 2025 RentiSure Technologies Ltd. All rights reserved. Made with ❤️ in Nigeria.</p>
+    </div>
+  </div>
+</footer>
+
+<script>window.RENTISURE_APK_URL = "https://expo.dev/artifacts/eas/if45j3ghzYnWhUs2dhNsE.apk";</script>
+<script src="script.js"></script>
 </body>
 </html>
